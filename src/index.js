@@ -14,6 +14,8 @@ async function startApolloServer(typeDefs, resolvers) {
     },
   });
 
+  await server.listen({port: process.env.PORT || 4000});
+
   const { url, port } = await server.listen();
   console.log(`
       🚀  Server is running
